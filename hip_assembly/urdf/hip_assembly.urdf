@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="hip_assembly">
+  <link
+    name="Link_1">
+    <inertial>
+      <origin
+        xyz="0 0 1" 
+        rpy="0 0 0" />
+        <!-- Previous values for xyz: -0.15651 0.16652 0.12063--> 
+      <mass
+        value="1.4011" />
+      <inertia
+        ixx="0.0057559"
+        ixy="0.00040652"
+        ixz="0.0015393"
+        iyy="0.01142"
+        iyz="-0.00015938"
+        izz="0.0087626" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hip_assembly/meshes/Link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hip_assembly/meshes/Link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link_2">
+    <inertial>
+      <origin
+        xyz="-6.2943E-06 -0.010885 -0.024653"
+        rpy="0 0 0" />
+      <mass
+        value="0.35214" />
+      <inertia
+        ixx="0.00079842"
+        ixy="-1.0558E-07"
+        ixz="1.2126E-08"
+        iyy="0.00043007"
+        iyz="1.9952E-05"
+        izz="0.0011932" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hip_assembly/meshes/Link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hip_assembly/meshes/Link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.12828 0.11233 0.10668"
+      rpy="1.542 1.2658 -0.030421" />
+    <parent
+      link="Link_1" />
+    <child
+      link="Link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="50"
+      velocity="4" />
+  </joint>
+</robot>
