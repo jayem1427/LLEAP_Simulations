@@ -86,7 +86,7 @@
     </collision>
   </link>
   <joint
-    name="Joint_1"
+    name="hip_revolute_joint"
     type="revolute">
     <origin
       xyz="-0.12828 0.11233 0.10668"
@@ -103,4 +103,27 @@
       effort="50"
       velocity="4" />
   </joint>
+
+<!--
+ <transmission name="hip_revolute_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="hip_revolute_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="hip_revolute_joint_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+ </transmission>
+
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+  
+-->
+
+
 </robot>
