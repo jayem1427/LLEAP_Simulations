@@ -1,0 +1,3 @@
+upper_leg_shaft_revolute_joint_controller:
+  joint: upper_leg_shaft_revolute_joint
+  type: position_controllers/JointPositionController

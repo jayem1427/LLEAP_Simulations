@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="knee_assembly_v1">
+  <link
+    name="frame_coupler_link">
+    <inertial>
+      <origin
+        xyz="-3.22622082853156E-07 0.0848001065827293 -0.00150034104856598"
+        rpy="0 0 0" />
+      <mass
+        value="0.0581528661884124" />
+      <inertia
+        ixx="3.20161873569054E-05"
+        ixy="9.86814976387171E-11"
+        ixz="7.76409608763038E-13"
+        iyy="3.17192552300559E-06"
+        iyz="2.13732470736594E-10"
+        izz="3.20161873538291E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knee_assembly_v1/meshes/frame_coupler_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knee_assembly_v1/meshes/frame_coupler_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="upper_leg_link">
+    <inertial>
+      <origin
+        xyz="-6.97918693691592E-08 0.0381088504770922 -0.000167786029450245"
+        rpy="0 0 0" />
+      <mass
+        value="0.904457613867618" />
+      <inertia
+        ixx="0.000508840724317799"
+        ixy="4.10936685711496E-10"
+        ixz="-5.59758128401379E-10"
+        iyy="0.000814363886309135"
+        iyz="9.82828474764349E-06"
+        izz="0.000760381278491367" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knee_assembly_v1/meshes/upper_leg_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knee_assembly_v1/meshes/upper_leg_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upper_leg_fixed_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="frame_coupler_link" />
+    <child
+      link="upper_leg_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="upper_leg_shaft_link">
+    <inertial>
+      <origin
+        xyz="1.18584612615602E-19 -0.000345086564960897 0.00267456751967088"
+        rpy="0 0 0" />
+      <mass
+        value="0.0641400223810744" />
+      <inertia
+        ixx="5.49019055050818E-05"
+        ixy="0"
+        ixz="-3.58379341683968E-22"
+        iyy="5.49939900533223E-05"
+        iyz="-6.39986064257453E-21"
+        izz="8.58273871986064E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knee_assembly_v1/meshes/upper_leg_shaft_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knee_assembly_v1/meshes/upper_leg_shaft_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upper_leg_shaft_revolute_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 -0.087266 1.5708" /> <!-- alt: "-1.5708 0.087266 -1.5708"  w/ axis="0 0 -1" -->
+    <parent
+      link="upper_leg_link" />
+    <child
+      link="upper_leg_shaft_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.308"
+      effort="250"
+      velocity="1.308" />
+  </joint>
+  <link
+    name="shaft_lower_leg_link">
+    <inertial>
+      <origin
+        xyz="-3.19966210991784E-09 -0.0261363494785464 1.28240717817516E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.267461835965857" />
+      <inertia
+        ixx="0.000225232915020607"
+        ixy="-1.63048021781679E-11"
+        ixz="4.07029121087144E-12"
+        iyy="0.0001453649154111"
+        iyz="7.80927296887539E-12"
+        izz="0.000114898683107458" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knee_assembly_v1/meshes/shaft_lower_leg_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knee_assembly_v1/meshes/shaft_lower_leg_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft_lower_leg_fixed_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="upper_leg_shaft_link" />
+    <child
+      link="shaft_lower_leg_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <transmission name="upper_leg_shaft_revolute_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="upper_leg_shaft_revolute_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="upper_leg_shaft_revolute_joint_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </actuator>
+ </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+</robot>

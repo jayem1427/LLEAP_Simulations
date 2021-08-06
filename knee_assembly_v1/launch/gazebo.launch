@@ -1,0 +1,46 @@
+<launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_footprint base_link 40" />
+
+  <node
+    name="tf_base_frame_coupler"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link frame_coupler_link 40" />
+
+  <param
+    name="robot_description"
+    textfile="$(find knee_assembly_v1)/urdf/knee_assembly_v1.urdf" />
+
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find knee_assembly_v1)/urdf.rviz" />
+
+  <rosparam command="load" file="$(find knee_assembly_v1)/config/state_controller.yaml" />
+  <rosparam command="load" file="$(find knee_assembly_v1)/config/joints.yaml" />
+  <node name="controller_manager" pkg="controller_manager" type="spawner" 
+        args="state_controller upper_leg_shaft_revolute_joint_controller"/>
+
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find knee_assembly_v1)/urdf/knee_assembly_v1.urdf -urdf -model knee_assembly_v1"
+    output="screen" />
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+</launch>
