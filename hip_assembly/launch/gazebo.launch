@@ -19,16 +19,8 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find hip_assembly)/urdf/hip_assembly.urdf -urdf -model hip_assembly -x 0 -y 0 -z 0.01"
+    args="-file $(find hip_assembly)/urdf/hip_assembly.urdf -urdf -model hip_assembly -x 0 -y 0 -z 0"
     output="screen" />
-
-<!-- already being launched in the hip control 
-  <node
-    name="robot_state_publisher"
-    pkg="robot_state_publisher"
-    type="robot_state_publisher" />
-
--->
 
   <node
     name="fake_joint_calibration"

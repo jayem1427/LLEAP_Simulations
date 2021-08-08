@@ -85,6 +85,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="hip_revolute_joint"
     type="revolute">
@@ -99,11 +100,12 @@
       xyz="0 0 1" />
     <limit
       lower="0"
-      upper="3.14"
-      effort="50"
-      velocity="4" />
+      upper="2.2"
+      effort="10"
+      velocity="0.5" />
   </joint>
 
+  <disable_collisions link1="Link_1" link2="Link_2" reason="Adjacent" />
 
  <transmission name="hip_revolute_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
