@@ -104,7 +104,7 @@
       velocity="4" />
   </joint>
 
-<!--
+
  <transmission name="hip_revolute_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="hip_revolute_joint">
@@ -116,14 +116,13 @@
     </actuator>
  </transmission>
 
-
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/</robotNamespace>
+      <robotNamespace>/hip_assembly</robotNamespace>
     </plugin>
   </gazebo>
   
--->
+
 
 
 </robot>

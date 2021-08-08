@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'upper_leg_shaft_revolute_joint', ]
+controller_joint_names: ['', 'hip_revolute_joint', ]
