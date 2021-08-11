@@ -6,4 +6,4 @@ Controlling the hip assembly:
 
 1) roslaunch the gazebo file within /hip_assembly
 2) roslaunch the controller file within /hip_control
-3) use the format "rostopic pub -1 /hip_assembly/hip_revolute_joint_position_controller/command std_msgs/Float64 0.1" to control the hip.
+3) use the format "rostopic pub -1 /hip_assembly/hip_revolute_joint_position_controller/command std_msgs/Float64 INSERT_NUM_HERE" to control the hip. Change the INSERT_NUM_HERE value to a position in radians.
