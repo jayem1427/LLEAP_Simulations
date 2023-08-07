@@ -1,6 +1,7 @@
 # LLEAP_Simulations
 
-This repository is for ROS-based Exo-skeleton simulations developed by Cal Poly's LLEAP. 
+This repository is for ROS-based Exo-skeleton simulations developed by Cal Poly's LLEAP in the year 2020. This simualation contains a simulation of the  
+LLEAP hip and knee assembly designs as of 2020.
 
 Controlling the hip assembly:
 
